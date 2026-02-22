@@ -194,7 +194,12 @@ void showEnergySummary(const vector<Appliance>& appliances) {
     cout << "TOTAL ENERGY: " << fixed << setprecision(3) << total << " kWh/day\n";
     cout << "========================================================\n";
 }
-
+double calculateTotalEnergyPerDay(const std::vector<Appliance>& appliances) {
+    double total = 0.0;
+    for (const auto& a : appliances)
+        total += a.energyKWhPerDay();
+    return total;
+}
 void calculateBill(const vector<Appliance>& appliances) {
     if (appliances.empty()) {
         cout << "No appliances registered.\n";
@@ -212,21 +217,19 @@ void calculateBill(const vector<Appliance>& appliances) {
         clearBadInput();
     }
 
-    double totalEnergy = 0.0;
-    for (const auto& a : appliances) {
-        totalEnergy += a.energyKWhPerDay();
-    }
+    double totalDaily = calculateTotalEnergyPerDay(appliances);
+double totalMonthly = totalDaily * 30; //Standard month calculation
+double totalCost = totalMonthly * tariff;
 
-    double totalCost = totalEnergy * tariff;
-
-    cout << "\n===== BILL SUMMARY =====\n";
-    cout << "Total Energy (per day): " << fixed << setprecision(3) << totalEnergy << " kWh/day\n";
-    cout << "Tariff: " << fixed << setprecision(2) << tariff << " per kWh\n";
-    cout << "Total Cost (per day): " << fixed << setprecision(2) << totalCost << "\n";
+cout << "\n===== BILL SUMMARY =====\n";
+cout << "Total Energy (per day): " << fixed << setprecision(3) << totalDaily << " kWh/day\n";
+cout << "Total Energy (per month): " << totalMonthly << " kWh/month\n";
+cout << "Tariff: " << fixed << setprecision(2) << tariff << " per kWh\n";
+cout << "Total Monthly Cost: " << totalCost << "\n";
 }
 
 int main() {
-    vector<Appliance> appliances;
+    std::vector<Appliance> appliances;
 
     while (true) {
         int choice = menu();
