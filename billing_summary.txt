@@ -1,0 +1,4 @@
+=== ELECTRICAL BILLING SUMMARY ===
+blender        : $1.80/month
+----------------------------------
+TOTAL ESTIMATED MONTHLY BILL: $1.80
