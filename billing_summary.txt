@@ -1,4 +1,5 @@
 === ELECTRICAL BILLING SUMMARY ===
 blender        : $1.80/month
+fridge         : $32.40/month
 ----------------------------------
-TOTAL ESTIMATED MONTHLY BILL: $1.80
+TOTAL ESTIMATED MONTHLY BILL: $34.20
