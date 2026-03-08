@@ -1,5 +1,6 @@
 === ELECTRICAL BILLING SUMMARY ===
-blender        : $1.80/month
-fridge         : $32.40/month
+Ricecooker     : $6.75/month
+blender        : $1.35/month
+airfryer       : $2.70/month
 ----------------------------------
-TOTAL ESTIMATED MONTHLY BILL: $34.20
+TOTAL ESTIMATED MONTHLY BILL: $10.80
